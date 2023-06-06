@@ -1,9 +1,14 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router';
+import { reactive } from 'vue'
+
+import ru_RU from 'ant-design-vue/es/locale/ru_RU'
+const locale = reactive(ru_RU)
 </script>
 
 <template>
-<RouterView/>
+<a-config-provider :locale="locale">
+  <router-view/>
+</a-config-provider>
 </template>
 
 <style lang="scss" scoped>
