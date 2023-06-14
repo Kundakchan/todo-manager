@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <a-row>
+  <a-row align="middle">
     <a-col class="background-container" :span="17">
       <img class="background" src="@/assets/images/authorization/background.png" alt="">
     </a-col>
@@ -23,6 +23,8 @@
   float: right;
 }
 .slot {
-  padding: 24px;
+  padding-right: 65px;
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 </style>
