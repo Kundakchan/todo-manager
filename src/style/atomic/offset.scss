@@ -1,0 +1,30 @@
+
+$positions: (
+  t: 'top',
+  r: 'right',
+  b: 'bottom',
+  l: 'left'
+);
+$properties: (
+  m: 'margin',
+  p: 'padding'
+);
+
+$quantity: (
+  24: 24,
+  64: 64
+);
+
+@each $key, $value in $properties {
+  .#{$key} {
+    @each $k, $v in $positions {
+      &#{$k} {
+        @each $qk, $qv in $quantity {
+          &#{$qk} {
+            #{$value}-#{$v}: #{$qv}px;
+          }
+        }
+      }
+    }
+  }
+}

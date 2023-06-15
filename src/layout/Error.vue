@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <a-layout class="error-layout">
+  <a-layout class="error-layout pt24 pr24 pb24 pl24">
     <a-layout-content class="error-layout-content">
       <router-view />
     </a-layout-content>
@@ -12,7 +12,6 @@
 <style lang="scss" scoped>
 .error-layout {
   min-height: 100vh;
-  padding: 24px;
 }
 .error-layout-content {
   display: flex;

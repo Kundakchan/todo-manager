@@ -6,7 +6,7 @@
     <a-col class="background-container" :span="17">
       <img class="background" src="@/assets/images/authorization/background.png" alt="">
     </a-col>
-    <a-col class="slot" :span="7">
+    <a-col class="pt24 pb24 pr64" :span="7">
       <router-view />
     </a-col>
   </a-row>
@@ -21,10 +21,5 @@
 .background {
   height: 100%;
   float: right;
-}
-.slot {
-  padding-right: 65px;
-  padding-top: 24px;
-  padding-bottom: 24px;
 }
 </style>
