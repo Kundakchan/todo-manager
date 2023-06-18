@@ -7,7 +7,7 @@ import { KHeader } from '@/components'
     <a-layout-header class="bg-white">
       <k-header/>
     </a-layout-header>
-    <a-layout-content>
+    <a-layout-content class="grid">
       <router-view/>
     </a-layout-content>
   </a-layout>

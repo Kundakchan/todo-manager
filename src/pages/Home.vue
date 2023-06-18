@@ -32,27 +32,29 @@ const currentPage = ref(1)
 </script>
 
 <template>
-  <a-row class="pl24 pr24" justify="center">
-    <a-col>
-      <a-typography-title class="fs-64 mb48 mt48"><span class="color-red">Todo</span> manager</a-typography-title>
-    </a-col>
-  </a-row>
-  <a-row class="pl24 pr24 pb24" justify="center">
-    <a-col :span="12">
-      <a-input-group class="flex">
-        <a-input />
-        <a-button type="primary">Создать</a-button>
-      </a-input-group>
-    </a-col>
-  </a-row>
-  <a-row class="pl24 pr24">
-    <a-col :span="24">
-      <a-radio-group v-model:value="status">
-        <a-radio-button v-for="item in statusList" :value="item.value">{{ item.label }}</a-radio-button>
-      </a-radio-group>
-    </a-col>
-    <a-col :span="24">
-      <a-table :columns="columns" :data-source="source"></a-table>
-    </a-col>
-  </a-row>
+  <div class="home-wrapper">
+    <a-row class="pl24 pr24" justify="center">
+      <a-col>
+        <a-typography-title class="fs-64 mb48 mt48"><span class="color-red">Todo</span> manager</a-typography-title>
+      </a-col>
+    </a-row>
+    <a-row class="pl24 pr24 pb24" justify="center">
+      <a-col :span="12">
+        <a-input-group class="flex">
+          <a-input />
+          <a-button type="primary">Создать</a-button>
+        </a-input-group>
+      </a-col>
+    </a-row>
+    <a-row class="pl24 pr24">
+      <a-col :span="24">
+        <a-radio-group v-model:value="status">
+          <a-radio-button v-for="item in statusList" :value="item.value">{{ item.label }}</a-radio-button>
+        </a-radio-group>
+      </a-col>
+      <a-col :span="24">
+        <a-table :columns="columns" :data-source="source"></a-table>
+      </a-col>
+    </a-row>
+  </div>
 </template>
