@@ -1,0 +1,24 @@
+[
+  {
+    "title": "Пользователи",
+    "dataIndex": "users",
+    "sorter": true
+  },
+  {
+    "title": "Email",
+    "dataIndex": "email",
+    "sorter": true
+  },
+  {
+    "title": "Пароль",
+    "dataIndex": "password"
+  },
+  {
+    "title": "Роль",
+    "dataIndex": "role"
+  },
+  {
+    "title": "Действия",
+    "dataIndex": "actions"
+  }
+]

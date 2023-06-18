@@ -12,6 +12,7 @@ const PageRegistration = () => import('@/pages/Registration.vue')
 const PageNotFond = () => import('@/pages/NotFond.vue')
 const PageForbidden = () => import('@/pages/Forbidden.vue')
 const PageProfile = () => import('@/pages/Profile.vue')
+const PageUsers = () => import('@/pages/Users.vue')
 
 const routes: RouteRecordRaw[] = [
   {
@@ -33,6 +34,11 @@ const routes: RouteRecordRaw[] = [
         path: 'profile',
         name: 'Profile',
         component: PageProfile
+      },
+      {
+        path: 'users',
+        name: 'Users',
+        component: PageUsers
       }
     ]
   },
