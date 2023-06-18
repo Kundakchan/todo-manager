@@ -12,7 +12,8 @@ $properties: (
 
 $quantity: (
   24: 24,
-  64: 64
+  64: 64,
+  48: 48
 );
 
 @each $key, $value in $properties {
@@ -21,7 +22,7 @@ $quantity: (
       &#{$k} {
         @each $qk, $qv in $quantity {
           &#{$qk} {
-            #{$value}-#{$v}: #{$qv}px;
+            #{$value}-#{$v}: #{$qv}px !important;
           }
         }
       }

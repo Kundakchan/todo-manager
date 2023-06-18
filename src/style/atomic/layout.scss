@@ -31,7 +31,7 @@ $width: (
 }
 
 .flex {
-  display: flex;
+  display: flex !important;
 }
 .flex-center {
   justify-content: center;

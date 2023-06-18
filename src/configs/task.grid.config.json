@@ -1,0 +1,21 @@
+[
+  {
+    "title": "Дата создания",
+    "dataIndex": "createAt",
+    "sorter": true
+  },
+  {
+    "title": "Дата обновления",
+    "dataIndex": "updateAt",
+    "sorter": true
+  },
+  {
+    "title": "Названия",
+    "dataIndex": "name",
+    "sorter": true
+  },
+  {
+    "title": "Действия",
+    "dataIndex": "actions"
+  }
+]
