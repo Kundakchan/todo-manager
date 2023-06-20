@@ -1,7 +1,9 @@
 <script lang="ts" setup>
-import { h, reactive, onBeforeMount } from 'vue';
-import { HomeOutlined, InfoCircleOutlined, UserOutlined } from '@ant-design/icons-vue';
+import { reactive, defineAsyncComponent } from 'vue';
+import { HomeOutlined, InfoCircleOutlined } from '@ant-design/icons-vue';
 import { useRoute } from 'vue-router';
+
+const UserMenu = defineAsyncComponent(() => import('@/components/header/UserMenu.vue'))
 
 const route = useRoute()
 
@@ -37,7 +39,7 @@ const isActive = (name: string) => {
       </a-row>
     </a-col>
     <a-col flex="none">
-      <a-button class="menu-button h-64 w-64 fs-34" :icon="h(UserOutlined)" />
+      <user-menu />
     </a-col>
   </a-row>
 </template>
