@@ -6,4 +6,13 @@ const router = createRouter({
   routes
 })
 
+router.beforeEach((to, from) => {
+  const isLoggedIn = localStorage.getItem('isLoggedIn')
+  if (to.meta.requiresAuth && isLoggedIn && !JSON.parse(isLoggedIn).value) {
+    return {
+      name: 'Login'
+    }
+  }
+})
+
 export default router

@@ -23,21 +23,25 @@ const routes: RouteRecordRaw[] = [
         path: '',
         alias: 'home',
         name: 'Home',
+        meta: { requiresAuth: true },
         component: PageHome
       },
       {
         path: 'about',
         name: 'About',
+        meta: { requiresAuth: true },
         component: PageAbout
       },
       {
         path: 'profile',
         name: 'Profile',
+        meta: { requiresAuth: true },
         component: PageProfile
       },
       {
         path: 'users',
         name: 'Users',
+        meta: { requiresAuth: true },
         component: PageUsers
       }
     ]
