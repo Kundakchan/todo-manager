@@ -1,10 +1,15 @@
 <script lang="ts" setup>
 import { UserOutlined } from '@ant-design/icons-vue'
 import { reactive, computed } from 'vue';
-import type { ItemType } from 'ant-design-vue';
 import { useRoute, useRouter } from 'vue-router';
+import { useAuthStore } from '@/stores/auth';
+
+// import types
+import type { ItemType } from 'ant-design-vue';
+
 const route = useRoute()
 const router = useRouter()
+const { logout } = useAuthStore()
 
 const selectedKeys = computed(() => [route.name])
 
@@ -19,8 +24,13 @@ const items: ItemType[] = reactive([
   {
     key: 'LogOut',
     label: 'Выйти',
-    onClick: () => {
-      console.log('log out')
+    onClick: async () => {
+      try {
+        await logout()
+        router.push({ name: 'Login' })
+      } catch (error) {
+        throw error
+      }
     }
   }
 ])
