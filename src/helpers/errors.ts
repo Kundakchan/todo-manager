@@ -15,6 +15,16 @@ const handlerFirebase = (error: FirebaseError | unknown): void => {
   throw error
 }
 
+const handlerCustom = (error: Error): void => {
+  notification.error({
+    placement: 'topRight',
+    duration: 3,
+    message: error.name,
+    description: error.message
+  })
+}
+
 export default {
-  handlerFirebase
+  handlerFirebase,
+  handlerCustom
 }

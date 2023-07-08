@@ -1,33 +1,23 @@
 <script lang="ts" setup>
-import { ref, reactive } from 'vue';
-import columns from '@/configs/task.grid.config.json'
+import { ref } from 'vue';
 
-const status = ref('all')
-const statusList = reactive([
-  {
-    label: 'Все',
-    value: 'all'
-  },
-  {
-    label: 'Новые',
-    value: 'new'
-  },
-  {
-    label: 'В процессе',
-    value: 'processing'
-  },
-  {
-    label: 'Выполненные',
-    value: 'success'
-  },
-  {
-    label: 'Отменённые',
-    value: 'cancel'
+import { KCreatingTask, KViewTasks, KEditorTaks, KStatusTaskTab } from '@/components'
+import { useTasksStore } from '@/stores/tasks'
+const { getList } = useTasksStore()
+
+// Types import
+import type { EditorHander } from '@/stores/tasks/types'
+
+const editor = ref({
+  open: false,
+  id: ''
+})
+const editorHander: EditorHander = (id) => {
+  editor.value = {
+    open: true,
+    id: id
   }
-])
-
-const source = reactive([])
-const currentPage = ref(1)
+}
 
 </script>
 
@@ -40,21 +30,17 @@ const currentPage = ref(1)
     </a-row>
     <a-row class="pl24 pr24 pb24" justify="center">
       <a-col :span="12">
-        <a-input-group class="flex">
-          <a-input />
-          <a-button type="primary">Создать</a-button>
-        </a-input-group>
+        <k-creating-task />
       </a-col>
     </a-row>
     <a-row class="pl24 pr24">
       <a-col :span="24">
-        <a-radio-group v-model:value="status">
-          <a-radio-button v-for="item in statusList" :value="item.value">{{ item.label }}</a-radio-button>
-        </a-radio-group>
+        <k-status-task-tab />
       </a-col>
       <a-col :span="24">
-        <a-table :columns="columns" :data-source="source"></a-table>
+        <k-view-tasks @open-edit="editorHander"/>
       </a-col>
     </a-row>
+    <k-editor-taks v-model:open="editor.open" :id="editor.id" @saved-data="getList" />
   </div>
 </template>
