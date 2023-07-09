@@ -92,7 +92,9 @@ const editHandler: RecordHandler = ({ record }) => {
     rowKey="id"
     :columns="columns"
     :data-source="source"
-    @change="handleTableChange">
+    @change="handleTableChange"
+    :pagination="{ position: ['bottomCenter'] }"
+  >
     <template #bodyCell="{ column, text, record  }">
       <div v-if="column.dataIndex === 'created'">
         {{ dateFormat(text) }}
@@ -113,4 +115,4 @@ const editHandler: RecordHandler = ({ record }) => {
       </a-space>
     </template>
   </a-table>
-</template>@/stores/tasks/types/Tasks
+</template>

@@ -34,7 +34,7 @@ const editorHander: EditorHander = (id) => {
       </a-col>
     </a-row>
     <a-row class="pl24 pr24">
-      <a-col :span="24">
+      <a-col class="mb8" :span="24">
         <k-status-task-tab />
       </a-col>
       <a-col :span="24">

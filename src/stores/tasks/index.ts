@@ -14,9 +14,9 @@ export const useTasksStore = defineStore('tasks', () => {
   const current = ref<DocumentData | null>(null)
   const loading = ref(false)
   const filters = ref<Filters>({
-    limit: 10,
+    limit: 10000,
     field: 'status',
-    status: 'new'
+    status: 'all'
   })
   const sorting = ref<Sorting>({
     field: 'created',

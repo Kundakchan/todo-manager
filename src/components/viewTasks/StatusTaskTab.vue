@@ -45,6 +45,22 @@ const statusList = reactive([
 
 <template>
   <a-radio-group v-model:value="tab" @change="changeHandler">
-    <a-radio-button v-for="item in statusList" :value="item.value">{{ item.label }}</a-radio-button>
+    <a-radio-button class="tab-item" v-for="item in statusList" :value="item.value">{{ item.label }}</a-radio-button>
   </a-radio-group>
 </template>
+
+<style lang="scss" scoped>
+@import '@/style/variables/colors.scss';
+.tab-item {
+  border: none;
+  padding: 0;
+  margin-right: 32px;
+  height: 46px;
+}
+.tab-item::before {
+  display: none;
+}
+.tab-item.ant-radio-button-wrapper-checked {
+  border-bottom: 2px solid get-color('blue')
+}
+</style>
