@@ -44,13 +44,15 @@ const columns: TableColumnProps<Task>[] = reactive([
     title: "Дата создания",
     dataIndex: "created",
     sorter: true,
-    sortDirections: ['ascend', 'descend']
+    sortDirections: ['ascend', 'descend'],
+    width: 150
   },
   {
     title: "Дата обновления",
     dataIndex: "updated",
     sorter: true,
-    sortDirections: ['ascend', 'descend']
+    sortDirections: ['ascend', 'descend'],
+    width: 180
   },
   {
     title: "Названия",
@@ -60,7 +62,8 @@ const columns: TableColumnProps<Task>[] = reactive([
   },
   {
     title: "Действия",
-    dataIndex: "actions"
+    dataIndex: "actions",
+    width: 80
   }
 ])
 

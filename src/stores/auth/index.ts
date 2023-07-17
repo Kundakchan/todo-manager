@@ -1,6 +1,15 @@
 import { ref, reactive, computed } from "vue"
 import { defineStore } from "pinia"
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updateProfile, onAuthStateChanged } from "firebase/auth"
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  updateProfile,
+  onAuthStateChanged,
+  updateEmail,
+  updatePassword
+} from "firebase/auth"
 import { errors } from "@/helpers"
 
 // Types import
@@ -44,5 +53,21 @@ export const useAuthStore = defineStore('auth', () => {
       errors.handlerFirebase(error)
     }
   }
-  return { login, logout, registration, user, isLoggedIn}
+
+  const profileUpdate = async ({ name, email, password }: RegistrationParam) => {
+    try {
+      if (name && user.value) {
+        await updateProfile(user.value, { displayName: name })
+      }
+      if (email && user.value) {
+        await updateEmail(user.value, email)
+      }
+      if (password && user.value)  {
+        await updatePassword(user.value, password)
+      }
+    } catch (error) {
+      errors.handlerFirebase(error)
+    }
+  }
+  return { login, logout, registration, profileUpdate, user, isLoggedIn}
 })
