@@ -13,6 +13,7 @@ declare module 'vue' {
     AConfigProvider: typeof import('ant-design-vue/es')['ConfigProvider']
     ADivider: typeof import('ant-design-vue/es')['Divider']
     ADropdown: typeof import('ant-design-vue/es')['Dropdown']
+    AForm: typeof import('ant-design-vue/es')['Form']
     AInput: typeof import('ant-design-vue/es')['Input']
     AInputGroup: typeof import('ant-design-vue/es')['InputGroup']
     AInputPassword: typeof import('ant-design-vue/es')['InputPassword']
@@ -44,6 +45,8 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     StatusTaskTab: typeof import('./src/components/viewTasks/StatusTaskTab.vue')['default']
+    Test: typeof import('./src/components/test/Test.vue')['default']
+    TestItem: typeof import('./src/components/test/TestItem.vue')['default']
     UserMenu: typeof import('./src/components/header/UserMenu.vue')['default']
     ViewTasks: typeof import('./src/components/viewTasks/ViewTasks.vue')['default']
   }

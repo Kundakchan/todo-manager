@@ -13,6 +13,7 @@ const PageNotFond = () => import('@/pages/NotFond.vue')
 const PageForbidden = () => import('@/pages/Forbidden.vue')
 const PageProfile = () => import('@/pages/Profile.vue')
 const PageUsers = () => import('@/pages/Users.vue')
+const PageTest = () => import('@/pages/Test.vue')
 
 const routes: RouteRecordRaw[] = [
   {
@@ -79,6 +80,11 @@ const routes: RouteRecordRaw[] = [
         component: PageForbidden
       }
     ]
+  },
+  {
+    path: '/test',
+    name: 'Test',
+    component: PageTest
   },
   {
     path: '/:catchAll(.*)',
